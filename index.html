@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Denúncias</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Bem-vindo ao Sistema de Denúncias Comunitárias</h1>
+    <nav>
+      <button onclick="mostrarFormulario()">Novo Relatório</button>
+      <button onclick="mostrarRelatorios()">Consulta de Relatório</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="formulario">
+      <h2>Registrar uma Reclamação</h2>
+      <form onsubmit="enviarRelatorio(event)">
+        <label>Título: <input type="text" id="titulo" required></label><br>
+        <label>Descrição: <textarea id="descricao" required></textarea></label><br>
+        <label>Categoria: 
+          <select id="categoria">
+            <option value="Segurança">Segurança</option>
+            <option value="Infraestrutura">Infraestrutura</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </label><br>
+        <label>Local: <input type="text" id="local" required></label><br>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section id="lista-relatorios" style="display:none;">
+      <h2>Relatórios Registrados</h2>
+      <ul id="relatorios"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
